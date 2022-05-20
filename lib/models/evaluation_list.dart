@@ -27,11 +27,11 @@ class EvaluationList extends ChangeNotifier {
     if (response.body == 'null') return;
     Map<String, dynamic> data = jsonDecode(response.body);
     for (String name in App.alunos) {
-      double total = 0;
+      double total = 0.0;
       int avaliacoes = 0;
       data.forEach((id, EvaluationData) {
         if (name == EvaluationData['avaliado'].toString()) {
-          total += EvaluationData['note'] as double;
+          total = total + double.parse(EvaluationData['note'].toString());
           avaliacoes += 1;
         }
       });

@@ -53,7 +53,9 @@ class _FormEvaluationState extends State<FormEvaluation> {
                           .addEvaluation(Evaluation(
                               avaliador: _nameController.text,
                               avaliado: widget.name,
-                              note: double.parse(_noteController.text)))
+                              note: _noteController.text.isEmpty
+                                  ? 0
+                                  : double.parse(_noteController.text)))
                           .then((_) => Navigator.of(context).pop());
                     },
                     child: Text(

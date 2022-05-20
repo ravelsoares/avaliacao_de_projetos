@@ -25,7 +25,10 @@ class ResultItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Média: ${result.media}'),
+                  Text(
+                    'Média: ${result.media}',
+                    style: TextStyle(color: Colors.black),
+                  ),
                   const SizedBox(width: 20),
                   Text('Avaliações: ${result.avaliacoes}')
                 ],
