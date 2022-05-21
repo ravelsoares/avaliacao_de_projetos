@@ -2,7 +2,7 @@
     package="com.example.avaliacao_empreendedorismo">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="avaliacao_empreendedorismo"
+        android:label="Avaliador de Trabalhos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
