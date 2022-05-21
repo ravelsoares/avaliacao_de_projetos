@@ -1,4 +1,5 @@
 import 'package:avaliacao_empreendedorismo/pages/home_page.dart';
+import 'package:avaliacao_empreendedorismo/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'models/evaluation_list.dart';
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: const HomePage(),
         debugShowCheckedModeBanner: false,
+        routes: {
+          Routes.home:(context) => const HomePage(),
+        },
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:avaliacao_empreendedorismo/models/evaluation_list.dart';
 import 'package:avaliacao_empreendedorismo/models/evaluation.dart';
-import 'package:avaliacao_empreendedorismo/pages/home_page.dart';
+import 'package:avaliacao_empreendedorismo/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -59,7 +59,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
                     return null;
                   },
                   onFieldSubmitted: (_) {
-                    confirmEvaluation();
+                    confirmEvaluation(context);
                   },
                 ),
                 Row(
@@ -68,7 +68,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
                     TextButton(
                       onPressed: () {
                         if (_keyForm.currentState!.validate()) {
-                          confirmEvaluation();
+                          confirmEvaluation(context);
                         }
                       },
                       child: Text(
@@ -86,10 +86,10 @@ class _FormEvaluationState extends State<FormEvaluation> {
     );
   }
 
-  void confirmEvaluation() {
+  void confirmEvaluation(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) {
+      builder: (cxt) {
         return AlertDialog(
           title: Text('Avaliando ${widget.name}'),
           content: Text(
@@ -97,14 +97,13 @@ class _FormEvaluationState extends State<FormEvaluation> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(cxt).pop();
               },
               child: const Text('Cancelar'),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.of(cxt).pop();
                 Provider.of<EvaluationList>(context, listen: false)
                     .addEvaluation(Evaluation(
                         avaliador: _nameController.text,
@@ -112,6 +111,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
                         note: _noteController.text.isEmpty
                             ? 0
                             : double.parse(_noteController.text)));
+                Navigator.of(context).pop();
               },
               child: const Text('Confirmar'),
             ),
