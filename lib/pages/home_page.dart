@@ -1,9 +1,6 @@
-import 'package:avaliacao_empreendedorismo/models/evaluation_list.dart';
 import 'package:avaliacao_empreendedorismo/pages/result_page.dart';
 import 'package:avaliacao_empreendedorismo/widgets/form_evaluation.dart';
-import 'package:avaliacao_empreendedorismo/widgets/result_item.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../utils/constants.dart';
 import '../widgets/presentation_item.dart';
 
@@ -41,14 +38,7 @@ class _HomePageState extends State<HomePage> {
                     App.alunos[index], openModalBottomSheet);
               },
             ),
-            ResultPage()
-            /*floatingActionButton: FloatingActionButton(
-                onPressed: () =>
-                    Provider.of<EvaluationList>(context, listen: false)
-                        .loadEvaluations(),
-                child: const Icon(Icons.refresh),
-              ),
-              )*/
+            const ResultPage()
           ],
         ),
       ),

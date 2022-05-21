@@ -25,9 +25,22 @@ class ResultItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Icon(
+                    result.media >= 70
+                        ? Icons.check
+                        : result.avaliacoes == 0
+                            ? Icons.remove
+                            : Icons.dangerous,
+                    color: result.media >= 70
+                        ? Colors.green
+                        : result.avaliacoes == 0
+                            ? Colors.grey
+                            : Colors.red,
+                  ),
+                  const SizedBox(width: 5),
                   Text(
-                    'Média: ${result.media}',
-                    style: TextStyle(color: Colors.black),
+                    'Média: ${result.media.toStringAsFixed(2)}',
+                    style: const TextStyle(color: Colors.black),
                   ),
                   const SizedBox(width: 20),
                   Text('Avaliações: ${result.avaliacoes}')

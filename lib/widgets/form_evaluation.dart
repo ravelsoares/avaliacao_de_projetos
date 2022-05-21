@@ -1,5 +1,6 @@
 import 'package:avaliacao_empreendedorismo/models/evaluation_list.dart';
 import 'package:avaliacao_empreendedorismo/models/evaluation.dart';
+import 'package:avaliacao_empreendedorismo/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
   final _nameController = TextEditingController();
   final _noteController = TextEditingController();
   final GlobalKey<FormState> _keyForm = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -57,11 +59,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
                     return null;
                   },
                   onFieldSubmitted: (_) {
-                    Provider.of<EvaluationList>(context, listen: false)
-                        .addEvaluation(Evaluation(
-                            avaliador: _nameController.text,
-                            avaliado: widget.name,
-                            note: double.parse(_noteController.text)));
+                    confirmEvaluation();
                   },
                 ),
                 Row(
@@ -70,14 +68,7 @@ class _FormEvaluationState extends State<FormEvaluation> {
                     TextButton(
                       onPressed: () {
                         if (_keyForm.currentState!.validate()) {
-                          Provider.of<EvaluationList>(context, listen: false)
-                              .addEvaluation(Evaluation(
-                                  avaliador: _nameController.text,
-                                  avaliado: widget.name,
-                                  note: _noteController.text.isEmpty
-                                      ? 0
-                                      : double.parse(_noteController.text)))
-                              .then((_) => Navigator.of(context).pop());
+                          confirmEvaluation();
                         }
                       },
                       child: Text(
@@ -94,4 +85,44 @@ class _FormEvaluationState extends State<FormEvaluation> {
       ),
     );
   }
+
+  void confirmEvaluation() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Avaliando ${widget.name}'),
+          content: Text(
+              'Tem certeza que quer avaliar com ${_noteController.text} ?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => HomePage()));
+                Provider.of<EvaluationList>(context, listen: false)
+                    .addEvaluation(Evaluation(
+                        avaliador: _nameController.text,
+                        avaliado: widget.name,
+                        note: _noteController.text.isEmpty
+                            ? 0
+                            : double.parse(_noteController.text)));
+              },
+              child: const Text('Confirmar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+  /*Provider.of<EvaluationList>(context, listen: false)
+                        .addEvaluation(Evaluation(
+                            avaliador: _nameController.text,
+                            avaliado: widget.name,
+                            note: double.parse(_noteController.text)));*/
 }
