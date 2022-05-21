@@ -17,10 +17,17 @@ class ResultItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                result.avaliado,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              Wrap(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    child: Text(
+                      result.avaliado,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                  )
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,10 +47,13 @@ class ResultItem extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     'Média: ${result.media.toStringAsFixed(2)}',
-                    style: const TextStyle(color: Colors.black),
+                    style: const TextStyle(fontSize: 13),
                   ),
                   const SizedBox(width: 20),
-                  Text('Avaliações: ${result.avaliacoes}')
+                  Text(
+                    'Avaliações: ${result.avaliacoes}',
+                    style: TextStyle(fontSize: 13),
+                  )
                 ],
               )
             ],

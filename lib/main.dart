@@ -23,10 +23,11 @@ class MyApp extends StatelessWidget {
         title: 'Avaliação de Trabalhos',
         theme: ThemeData(
           primarySwatch: Colors.purple,
+          fontFamily: 'Poppins',
         ),
         debugShowCheckedModeBanner: false,
         routes: {
-          Routes.home:(context) => const HomePage(),
+          Routes.home: (context) => const HomePage(),
         },
       ),
     );

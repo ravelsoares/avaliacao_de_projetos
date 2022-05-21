@@ -19,7 +19,8 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Avaliando Projetos de Empreendedorismo'),
+          title: const Text('Avaliando Projetos de Empreendedorismo',
+              style: TextStyle(fontSize: 18)),
           centerTitle: true,
           bottom: const TabBar(
             indicatorColor: Colors.white,
