@@ -14,58 +14,81 @@ class FormEvaluation extends StatefulWidget {
 class _FormEvaluationState extends State<FormEvaluation> {
   final _nameController = TextEditingController();
   final _noteController = TextEditingController();
+  final GlobalKey<FormState> _keyForm = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Card(
         elevation: 5,
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: 10.0,
-            left: 10,
-            right: 10,
-            bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
-          ),
-          child: Column(
-            children: [
-              TextField(
-                controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Avaliado Por:'),
-              ),
-              TextField(
-                controller: _noteController,
-                decoration: const InputDecoration(labelText: 'Nota'),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                onSubmitted: (_) {
-                  Provider.of<EvaluationList>(context, listen: false)
-                      .addEvaluation(Evaluation(
-                          avaliador: _nameController.text,
-                          avaliado: widget.name,
-                          note: double.parse(_noteController.text)));
-                },
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Provider.of<EvaluationList>(context, listen: false)
-                          .addEvaluation(Evaluation(
-                              avaliador: _nameController.text,
-                              avaliado: widget.name,
-                              note: _noteController.text.isEmpty
-                                  ? 0
-                                  : double.parse(_noteController.text)))
-                          .then((_) => Navigator.of(context).pop());
-                    },
-                    child: Text(
-                      'Salvar',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+        child: Form(
+          key: _keyForm,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 10.0,
+              left: 10,
+              right: 10,
+              bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
+            ),
+            child: Column(
+              children: [
+                TextFormField(
+                    controller: _nameController,
+                    decoration:
+                        const InputDecoration(labelText: 'Avaliado Por:'),
+                    validator: (name) {
+                      if (name == null || name.isEmpty) {
+                        return 'Informe seu nome';
+                      } else if (name.length < 3) {
+                        return 'Nome precisa ter mais de 3 letras';
+                      }
+                      return null;
+                    }),
+                TextFormField(
+                  controller: _noteController,
+                  decoration: const InputDecoration(labelText: 'Nota'),
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
+                  validator: (note) {
+                    if (note!.isEmpty) {
+                      return 'Adicione uma nota';
+                    } else if (double.parse(note) < 0) {
+                      return 'A nota não pode ser negativa';
+                    }
+                    return null;
+                  },
+                  onFieldSubmitted: (_) {
+                    Provider.of<EvaluationList>(context, listen: false)
+                        .addEvaluation(Evaluation(
+                            avaliador: _nameController.text,
+                            avaliado: widget.name,
+                            note: double.parse(_noteController.text)));
+                  },
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        if (_keyForm.currentState!.validate()) {
+                          Provider.of<EvaluationList>(context, listen: false)
+                              .addEvaluation(Evaluation(
+                                  avaliador: _nameController.text,
+                                  avaliado: widget.name,
+                                  note: _noteController.text.isEmpty
+                                      ? 0
+                                      : double.parse(_noteController.text)))
+                              .then((_) => Navigator.of(context).pop());
+                        }
+                      },
+                      child: Text(
+                        'Salvar',
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

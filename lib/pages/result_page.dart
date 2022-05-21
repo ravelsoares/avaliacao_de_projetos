@@ -20,7 +20,6 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<EvaluationList>(context).results);
     return Scaffold(
       body: ListView.builder(
         itemCount: Provider.of<EvaluationList>(context).results.length,
