@@ -1,16 +1,23 @@
-# avaliacao_empreendedorismo
+# Avaliador de Trabalhos
+## Introdução
+No ambiente de sala de aula surgiu a necessidade de um sistema que auxiliasse na avaliação simultânea de trabalhos acadêmicos.
+Tendo em vista solucionar esse problema elaborei uma aplicação flutter.
 
-A new Flutter project.
+## Sobre
+Por causa do tempo curto para a elaboração e desenvolvimento da aplicação (3 dias) tentei ser o mais minimalista possível, priorizando a lógica da aplicação.
+Desenvolvi apenas duas telas dentro de um TabBar, uma para o usuário avaliar e outra para acompanhar os resultados parciais. Como banco de dados escolhi o Firebase por causa da sua simplicidade e facilidade de integrar com o flutter.
+A avaliação consistia em um formulário que receberia o nome do avaliador e a nota, já o avaliado seria guardado automaticamente.
 
-## Getting Started
+## Funcionalidades que aprendi/aprimorei
+<ul>
+    <li>Construção de telas</li>
+    <li>Consumo de `Api`</li>
+    <li>Integração com `Firebase`</li>
+    <li>Preenchimento de formulários</li>
+</ul>
 
-This project is a starting point for a Flutter application.
+## Como Acessar ?
+Acesse o <a href="https://avaliador-de-trabalhos.netlify.app/#/">Link</a>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resultado
