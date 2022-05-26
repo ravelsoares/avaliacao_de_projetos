@@ -11,8 +11,8 @@ A avaliação consistia em um formulário que receberia o nome do avaliador e a 
 ## Funcionalidades que aprendi/aprimorei
 <ul>
     <li>Construção de telas</li>
-    <li>Consumo de `Api`</li>
-    <li>Integração com `Firebase`</li>
+    <li>Consumo de <b>Api</b></li>
+    <li>Integração com <b>Firebase</b></li>
     <li>Preenchimento de formulários</li>
 </ul>
 
