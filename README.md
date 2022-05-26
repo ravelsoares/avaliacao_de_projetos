@@ -21,3 +21,5 @@ Acesse o <a href="https://avaliador-de-trabalhos.netlify.app/#/">Link</a>
 
 
 ## Resultado
+<img src="https://github.com/ravelsoares/avaliacao_de_projetos/blob/main/Screenshot_20220526-172525_Chrome.jpg" alt="Foto da tela de trabalhos" height="425">
+<img src="https://github.com/ravelsoares/avaliacao_de_projetos/blob/main/Screenshot_20220526-172550_Chrome.jpg" alt="Foto do formulário de avaliação" height="425"> 
