@@ -37,7 +37,7 @@ class ResultItem extends StatelessWidget {
                         ? Icons.check
                         : result.avaliacoes == 0
                             ? Icons.remove
-                            : Icons.dangerous,
+                            : Icons.close,
                     color: result.media >= 70
                         ? Colors.green
                         : result.avaliacoes == 0
@@ -52,7 +52,7 @@ class ResultItem extends StatelessWidget {
                   const SizedBox(width: 20),
                   Text(
                     'Avaliações: ${result.avaliacoes}',
-                    style: TextStyle(fontSize: 13),
+                    style: const TextStyle(fontSize: 13),
                   )
                 ],
               )

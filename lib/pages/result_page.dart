@@ -19,6 +19,7 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Provider.of<EvaluationList>(context).results.isNotEmpty
           ? Column(

@@ -29,9 +29,9 @@ class EvaluationList extends ChangeNotifier {
     for (String name in App.alunos) {
       double total = 0.0;
       int avaliacoes = 0;
-      data.forEach((id, EvaluationData) {
-        if (name == EvaluationData['avaliado'].toString()) {
-          total = total + double.parse(EvaluationData['note'].toString());
+      data.forEach((id, evaluationData) {
+        if (name == evaluationData['avaliado'].toString()) {
+          total = total + double.parse(evaluationData['note'].toString());
           avaliacoes += 1;
         }
       });
