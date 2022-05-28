@@ -4,7 +4,7 @@ Projeto desenvolvido para avaliações simultâneas de trabalhos/projetos acadê
 <ul>
 <li><a href="#intro">Introdução</a></li>
 <li><a href="#sobre">Sobre</a></li>
-<li><a href="#funcionalidades">Funcionalidades</a></li>
+<li><a href="#func">Funcionalidades</a></li>
 <li><a href="#acessar">Como Acessar</a></li>
 <li><a href="#resultado">Resultado</a></li>
 </ul>
@@ -18,7 +18,7 @@ Tendo em vista solucionar esse problema elaborei uma aplicação flutter.
 Desenvolvi apenas duas telas dentro de um TabBar, uma para o usuário avaliar e outra para acompanhar os resultados parciais. Como banco de dados escolhi o Firebase por causa da sua simplicidade e facilidade de integrar com o flutter.
 A avaliação consistia em um formulário que receberia o nome do avaliador e a nota, já o avaliado seria guardado automaticamente.</p>
 
-<div class="funcionalidades">
+<div class="func">
   <h2>Funcionalidades que aprendi/aprimorei</h2>
   <ul>
     <li>Construção de telas</li>
