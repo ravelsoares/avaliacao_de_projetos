@@ -2,14 +2,14 @@
 Projeto desenvolvido para avaliações simultâneas de trabalhos/projetos acadêmicos.
 <h3>Índice</h3>
 <ul>
-<li><a href="#introducao">Introdução</a></li>
+<li><a href="#intro">Introdução</a></li>
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#funcionalidades">Funcionalidades</a></li>
-<li><a href="#como-acessar">Como Acessar</a></li>
+<li><a href="#acessar">Como Acessar</a></li>
 <li><a href="#resultado">Resultado</a></li>
 </ul>
 
-<h2 class="introducao">Introdução</h2>
+<h2 class="intro">Introdução</h2>
 No ambiente de sala de aula surgiu a necessidade de um sistema que auxiliasse na avaliação simultânea de trabalhos acadêmicos.
 Tendo em vista solucionar esse problema elaborei uma aplicação flutter.
 
@@ -24,7 +24,7 @@ A avaliação consistia em um formulário que receberia o nome do avaliador e a 
 + Integração com `Firebase`
 + Preenchimento de formulários
 
-<h2 class="como-acessar">Como Acessar ?</h2>
+<h2 class="acessar">Como Acessar ?</h2>
 Acesse o <a href="https://avaliador-de-trabalhos.netlify.app/#/">Link</a>
 
 
