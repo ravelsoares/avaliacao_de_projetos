@@ -14,18 +14,22 @@ No ambiente de sala de aula surgiu a necessidade de um sistema que auxiliasse na
 Tendo em vista solucionar esse problema elaborei uma aplicação flutter.
 
 <h2 class="sobre">Sobre</h2>
-Por causa do tempo curto para a elaboração e desenvolvimento da aplicação (3 dias) tentei ser o mais minimalista possível, priorizando a lógica da aplicação.
+<p>Por causa do tempo curto para a elaboração e desenvolvimento da aplicação (3 dias) tentei ser o mais minimalista possível, priorizando a lógica da aplicação.
 Desenvolvi apenas duas telas dentro de um TabBar, uma para o usuário avaliar e outra para acompanhar os resultados parciais. Como banco de dados escolhi o Firebase por causa da sua simplicidade e facilidade de integrar com o flutter.
-A avaliação consistia em um formulário que receberia o nome do avaliador e a nota, já o avaliado seria guardado automaticamente.
+A avaliação consistia em um formulário que receberia o nome do avaliador e a nota, já o avaliado seria guardado automaticamente.</p>
 
-<h2 class="funcionalidades">Funcionalidades que aprendi/aprimorei</h2>
-+ Construção de telas
-+ Consumo de `Api`
-+ Integração com `Firebase`
-+ Preenchimento de formulários
+<div class="funcionalidades">
+  <h2>Funcionalidades que aprendi/aprimorei</h2>
+  <ul>
+    <li>Construção de telas</li>
+    <li>Consumo de Api</li>
+    <li>Integração com Firebase</li>
+    <li>Preenchimento de formulários</li>
+  </ul>
+</div>
 
 <h2 class="acessar">Como Acessar ?</h2>
-Acesse o <a href="https://avaliador-de-trabalhos.netlify.app/#/">Link</a>
+<p>Acesse o <a href="https://avaliador-de-trabalhos.netlify.app/#/">Link</a></p>
 
 
 <h2 class="resultado">Resultado</h2>
