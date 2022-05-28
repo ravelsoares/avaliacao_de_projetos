@@ -1,4 +1,4 @@
-# Avaliador de Trabalhos
+<h1>Avaliador de Trabalhos</h1>
 Projeto desenvolvido para avaliações simultâneas de trabalhos/projetos acadêmicos.
 <h3>Índice</h3>
 <ul>
